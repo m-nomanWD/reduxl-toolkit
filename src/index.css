@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@400;500;600;700&family=Nanum+Myeongjo:wght@400;700;800&family=Nunito:wght@400;500;600;700&display=swap');
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Cormorant Upright', serif;
+  font-family: 'Nanum Myeongjo', serif;
+  font-family: 'Nunito', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -32,6 +35,9 @@ nav {
   letter-spacing: 2px;
   height: 70px;
 }
+.logo {
+  font-size: 30px;
+}
 .logo span {
   color: rgb(161, 109, 109);
 }
@@ -49,14 +55,21 @@ svg {
   top: -4px;
   color: blueviolet;
 }
+.cart {
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0px 0px 12px -3px rgba(80, 78, 78, 0.284);
+  padding: 1rem;
+  box-sizing: border-box;
+}
 .cart-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 90%;
   max-width: 600px;
-  box-shadow: 0px 2px 5px 0px rgba(102, 51, 153, 0.264);
-  margin: 0.5rem auto;
+  margin: 1rem auto;
   padding: 0.25rem 1rem;
   box-sizing: border-box;
 }
@@ -64,6 +77,9 @@ svg {
   display: flex;
   align-items: center;
   text-align: left;
+}
+.center {
+  margin-left: 0.5rem;
 }
 .center h4,
 h5 {
@@ -74,13 +90,14 @@ h5 {
   color: blueviolet;
   letter-spacing: 1px;
   margin-bottom: 0.1rem;
+  font-weight: 700;
 }
 .counter {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: blueviolet;
 }
 .counter span {
@@ -93,5 +110,81 @@ h5 {
   letter-spacing: 4px;
 }
 .img-container img {
-  width: 60px;
+  width: 80px;
+}
+
+footer {
+  width: 90%;
+  max-width: 600px;
+  border-top: 1px dotted rgba(137, 43, 226, 0.399);
+  margin: auto;
+}
+footer .total-container {
+  text-align: left;
+  padding: 0 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(79, 74, 74);
+
+  text-transform: uppercase;
+}
+.total-container span {
+  color: blueviolet;
+  font-weight: 700;
+}
+.btn {
+  background-color: blueviolet;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  text-transform: capitalize;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-family: fantasy;
+}
+
+.modal-container {
+  content: '';
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: rgba(0, 0, 0, 0.563);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal {
+  max-width: 300px;
+  background-color: white;
+  padding: 1rem;
+}
+.modal h2 {
+  font-size: 16px;
+  margin-bottom: 2rem;
+  font-weight: 500;
+
+  color: rgb(45, 42, 42);
+  text-transform: capitalize;
+}
+.btn-container {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 400;
+}
+.btn {
+  background-color: transparent;
+  border-radius: 4px;
+}
+.cancel {
+  border: 1px solid rgba(255, 3, 3, 0.342);
+  color: rgb(250, 45, 45);
+}
+.conform {
+  border: 1px solid rgba(22, 140, 45, 0.342);
+  color: rgb(50, 189, 50);
 }

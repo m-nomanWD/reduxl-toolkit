@@ -31,8 +31,21 @@ const cartSlice = createSlice({
       const cartItem = state.cart.find((item) => item.id === payload)
       cartItem.amount--
     },
+    totalCheck: (state) => {
+      let amount = 0
+      let total = 0
+      state.cart.forEach((item) => {
+        console.log(item.price)
+        amount += item.amount
+        total += item.amount * item.price
+      })
+
+      state.amont = amount
+      state.total = total
+    },
   },
 })
 
-export const { clearCart, increase, decrease, removeItem } = cartSlice.actions
+export const { clearCart, increase, decrease, removeItem, totalCheck } =
+  cartSlice.actions
 export default cartSlice.reducer
