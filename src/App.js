@@ -2,14 +2,14 @@ import { useEffect } from 'react'
 import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector'
 import { useDispatch } from 'react-redux'
 import store from './store'
-import { totalCheck } from './features/cart/cartStore'
+import { totalCheck, getCartItems } from './features/cart/cartStore'
 import './App.css'
 import Navbar from './components/Navbar'
 import CartContainer from './components/CartContainer'
 import Modal from './components/Modal'
 
 function App() {
-  const { cart } = useSelector((store) => store.cart)
+  const { cart, isLoading } = useSelector((store) => store.cart)
 
   const { isOpen } = useSelector((store) => store.modal)
   console.log(isOpen)
@@ -18,11 +18,14 @@ function App() {
   useEffect(() => {
     dispatch(totalCheck())
   }, [cart])
+  useEffect(() => {
+    dispatch(getCartItems())
+  }, [])
   return (
     <div className='App'>
       {isOpen && <Modal />}
       <Navbar />
-      <CartContainer />
+      {isLoading ? <h1 className='loading'>Loading...</h1> : <CartContainer />}
     </div>
   )
 }

@@ -55,6 +55,12 @@ svg {
   top: -4px;
   color: blueviolet;
 }
+.loading {
+  color: blueviolet;
+  font-family: fantasy;
+  letter-spacing: 4px;
+  margin-top: 2rem;
+}
 .cart {
   width: 90%;
   max-width: 600px;
